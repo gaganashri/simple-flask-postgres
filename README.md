@@ -1,4 +1,4 @@
-# ?? Flask + PostgreSQL + Redis (Dockerized Backend)
+# Flask + PostgreSQL + Redis (Dockerized Backend)
 
 A production-ready backend demonstrating:
 - Flask REST API
@@ -10,63 +10,61 @@ This project simulates real backend architecture used by top companies.
 
 ---
 
-## ?? Features
+## Features
 
-### ? Flask (API Layer)
+### Flask (API Layer)
 - Add users  
 - Get all users  
 - Cache-enabled routes  
 - Clear cache endpoint  
 
-### ? PostgreSQL (Database)
+### PostgreSQL (Database)
 - Stores all user records  
 - Auto-creates tables  
 - Persistent storage using Docker volumes  
 
-### ? Redis (Caching)
+### Redis (Caching)
 - Stores user list for faster reads  
 - Cache invalidates automatically on new user insert  
 - Manual cache reset available  
 
-### ? Dockerized Setup
+### Dockerized Setup
 - Flask, Redis, PostgreSQL run in separate containers  
 - Orchestrated using docker-compose.yml  
 - All services communicate over internal Docker network  
 
 ---
 
-## ?? Architecture Diagram
+## Architecture Diagram
 
 
 
 ---
 
-## ?? Project Structure
+##  Project Structure
 
 
 ---
 
-## ?? Project Structure
-
-
+##  Project Structure
 ### **Stop Services**
 
 ---
 
-## ?? API Endpoints
+## API Endpoints
 
-### **1?? Add User**
+### **1 Add User**
 **POST** /add_user
 
-### **2?? Get All Users**
+### **2 Get All Users**
 **GET** /users
 
-### **3?? Clear Cache**
+### **3 Clear Cache**
 **POST** /clear_cache
 
 ---
 
-## ?? Tech Stack
+## Tech Stack
 - Python + Flask  
 - PostgreSQL  
 - Redis  
@@ -75,8 +73,8 @@ This project simulates real backend architecture used by top companies.
 
 ---
 
-## ????? Author
-**Gagana Shree**  
+## Author
+**Gaganashree H N**  
 Backend Developer Portfolio Project  
   
 ## ?? Screenshots
@@ -85,9 +83,9 @@ Backend Developer Portfolio Project
 
 ![App screenshot](./screenshots/screenshot1.svg)
 
-## ?? API Documentation
+## API Documentation
 
-### ? Add User  
+### Add User  
 **POST** /add_user  
 Body:
 {
@@ -96,7 +94,7 @@ Body:
 
 ---
 
-### ?? Get Users  
+### Get Users  
 **GET** /users
 
 Returns:
@@ -105,7 +103,7 @@ Returns:
 
 ---
 
-### ? Update User  
+### Update User  
 **PUT** /update_user/<id>  
 Body:
 {
@@ -114,17 +112,17 @@ Body:
 
 ---
 
-### ? Delete User  
+### Delete User  
 **DELETE** /delete_user/<id>
 
 ---
 
-### ?? Clear Cache  
+### Clear Cache  
 **POST** /clear_cache
 
 ---
 
-## ?? GitHub Badges
+## GitHub Badges
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
 ![Flask](https://img.shields.io/badge/Flask-Backend-green?logo=flask)
