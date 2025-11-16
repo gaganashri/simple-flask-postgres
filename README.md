@@ -77,7 +77,7 @@ This project simulates real backend architecture used by top companies.
 **Gaganashree H N**  
 Backend Developer Portfolio Project  
   
-## ?? Screenshots
+## Screenshots
 
 **App running (example):**
 
