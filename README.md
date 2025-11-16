@@ -85,3 +85,51 @@ Backend Developer Portfolio Project
 
 ![App screenshot](./screenshots/screenshot1.svg)
 
+## ?? API Documentation
+
+### ? Add User  
+**POST** /add_user  
+Body:
+{
+  \"name\": \"Gagana\"
+}
+
+---
+
+### ?? Get Users  
+**GET** /users
+
+Returns:
+- "source": "cache" ? if data comes from Redis  
+- "source": "database" ? if data comes from PostgreSQL  
+
+---
+
+### ? Update User  
+**PUT** /update_user/<id>  
+Body:
+{
+  \"name\": \"NewName\"
+}
+
+---
+
+### ? Delete User  
+**DELETE** /delete_user/<id>
+
+---
+
+### ?? Clear Cache  
+**POST** /clear_cache
+
+---
+
+## ?? GitHub Badges
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-Backend-green?logo=flask)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-DB-blue?logo=postgresql)
+![Redis](https://img.shields.io/badge/Redis-Cache-red?logo=redis)
+![Docker](https://img.shields.io/badge/Docker-Containers-blue?logo=docker)
+![GitHub](https://img.shields.io/badge/Maintained-Yes-success?logo=github)
+
