@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+env/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+*.so
+
+# Docker
+*.log
+
+# Ignore volumes
+postgres-data/
+
+# VSCode
+.vscode/
+
+# Windows files
+Thumbs.db
