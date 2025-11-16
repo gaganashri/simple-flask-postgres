@@ -78,3 +78,10 @@ This project simulates real backend architecture used by top companies.
 ## ????? Author
 **Gagana Shree**  
 Backend Developer Portfolio Project  
+  
+## ?? Screenshots
+
+**App running (example):**
+
+![App screenshot](./screenshots/screenshot1.svg)
+
