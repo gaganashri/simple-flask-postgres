@@ -33,7 +33,6 @@ def add_user():
 
     conn = get_db_connection()
     cur = conn.cursor()
-
     cur.execute("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name VARCHAR(100));")
     cur.execute("INSERT INTO users (name) VALUES (%s) RETURNING id;", (name,))
     user_id = cur.fetchone()[0]
@@ -54,7 +53,6 @@ def get_users():
 
     conn = get_db_connection()
     cur = conn.cursor()
-
     cur.execute("CREATE TABLE IF NOT EXISTS users (id SERIAL PRIMARY KEY, name VARCHAR(100));")
     cur.execute("SELECT * FROM users;")
     rows = cur.fetchall()
@@ -64,6 +62,35 @@ def get_users():
 
     redis_client.set("users", json.dumps(rows))
     return jsonify({"source": "database", "data": rows})
+
+@app.route("/update_user/<int:user_id>", methods=["PUT"])
+def update_user(user_id):
+    data = request.json
+    new_name = data["name"]
+
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute("UPDATE users SET name=%s WHERE id=%s;", (new_name, user_id))
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    redis_client.delete("users")
+
+    return jsonify({"message": "User updated", "id": user_id})
+
+@app.route("/delete_user/<int:user_id>", methods=["DELETE"])
+def delete_user(user_id):
+    conn = get_db_connection()
+    cur = conn.cursor()
+    cur.execute("DELETE FROM users WHERE id=%s;", (user_id,))
+    conn.commit()
+    cur.close()
+    conn.close()
+
+    redis_client.delete("users")
+
+    return jsonify({"message": "User deleted", "id": user_id})
 
 @app.route("/clear_cache", methods=["POST"])
 def clear_cache():
